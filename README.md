@@ -20,7 +20,7 @@ myCookies.removeCookie('MyExampleCookie'); //return: false
 ##### setCookie(name, value[, expire]);
 ######  name - cookie name (string)
 ######  value - cookie value (string)
-######  expire - expire unix timestamp (integer)
+######  expire - expire unix timestamp (integer) /Default: 24 hours
 ######  return: boolean
 ##### cookieValue(value);
 ######  value - cookie value (string)
