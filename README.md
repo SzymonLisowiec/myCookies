@@ -18,19 +18,19 @@ myCookies.removeCookie('MyExampleCookie'); //return: false
 
 ### Methods
 ##### setCookie(name, value[, expire]);
-⋅⋅⋅name - cookie name (string)
-⋅⋅⋅value - cookie value (string)
-⋅⋅⋅expire - expire unix timestamp (integer)
-⋅⋅⋅return: boolean
+name - cookie name (string)
+value - cookie value (string)
+expire - expire unix timestamp (integer)
+return: boolean
 ##### cookieValue(value);
-⋅⋅⋅value - cookie value (string)
-⋅⋅⋅return: string or false
+value - cookie value (string)
+return: string or false
 ##### cookieName(name);
-⋅⋅⋅name - cookie name (string)
-⋅⋅⋅return: string or false
+name - cookie name (string)
+return: string or false
 ##### cookieExists(name);
-⋅⋅⋅name - cookie name (string)
-⋅⋅⋅return: boolean
+name - cookie name (string)
+return: boolean
 ##### removeCookie(name);
-⋅⋅⋅name - cookie name (string)
-⋅⋅⋅return: boolean
+name - cookie name (string)
+return: boolean
