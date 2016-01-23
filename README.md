@@ -17,20 +17,20 @@ myCookies.removeCookie('MyExampleCookie'); //return: false
 ```
 
 ### Methods
-1. setCookie(name, value[, expire]);
+##### setCookie(name, value[, expire]);
 ⋅⋅⋅name - cookie name (string)
 ⋅⋅⋅value - cookie value (string)
 ⋅⋅⋅expire - expire unix timestamp (integer)
 ⋅⋅⋅return: boolean
-2. cookieValue(value);
+##### cookieValue(value);
 ⋅⋅⋅value - cookie value (string)
 ⋅⋅⋅return: string or false
-3. cookieName(name);
+##### cookieName(name);
 ⋅⋅⋅name - cookie name (string)
 ⋅⋅⋅return: string or false
-4. cookieExists(name);
+##### cookieExists(name);
 ⋅⋅⋅name - cookie name (string)
 ⋅⋅⋅return: boolean
-5. removeCookie(name);
+##### removeCookie(name);
 ⋅⋅⋅name - cookie name (string)
 ⋅⋅⋅return: boolean
