@@ -1,6 +1,11 @@
 # myCookies
 Library for support cookies.
 
+## New Version 2.0
+* Full reconstruction script.
+* Support for cookie path and domain.
+* New methods: allCookies() & destroyCookies().
+
 ## Example
 ```JavaScript
 var myCookies = new myCookies();
@@ -29,7 +34,7 @@ myCookies([domain, path]);
 * **path** - [optional][string] - your path to save cookie - Default: /
 
 ## Methods
-##### setCookie
+
 ```JavaScript
 setCookie(name, value[, expire, domain, path]);
 ```
@@ -40,14 +45,14 @@ setCookie(name, value[, expire, domain, path]);
 * **path** - [optional][string] - your path to save cookie - Default: /
 * **return**: boolean
 
-##### cookieValue
+---
 ```JavaScript
 cookieValue(name);
 ```
 * **name** - [string] - cookie name
 * **return**: string or false
 
-##### cookieName
+---
 ```JavaScript
 cookieName(value);
 ```
@@ -61,20 +66,20 @@ cookieExists(name);
 * **name** - [string] - cookie name
 * **return**: boolean (true or false)
 
-##### removeCookie
+---
 ```JavaScript
 removeCookie(name);
 ```
 * **name** - [string] - cookie name
 * **return**: boolean (true or false)
 
-##### allCookies
+---
 ```JavaScript
 allCookies();
 ```
 * **return**: array of cookies (names and values) or false
 
-##### destroyCookies
+---
 ```JavaScript
 destroyCookies();
 ```
