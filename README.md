@@ -1,9 +1,6 @@
 # myCookies
 Library for support cookies.
 
-## New Version 2.0
-<span style="color:#f00;">test</span>
-
 ## Example
 ```JavaScript
 var myCookies = new myCookies();
@@ -57,7 +54,7 @@ cookieName(value);
 * **value** - [string] - cookie value
 * **return**: array of names or false
 
-##### cookieExists
+---
 ```JavaScript
 cookieExists(name);
 ```
