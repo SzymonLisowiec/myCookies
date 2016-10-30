@@ -1,97 +1,95 @@
 # myCookies
-Library for support cookies.
-
-## New Version 2.0
-* Full reconstruction script.
-* Support for cookie path and domain.
-* New methods: allCookies() & destroyCookies().
-
+Library created to make using cookies easier.
+ 
+## New Version 3.0
+- Extended mode - allows you to check the path, domain and expiration time of a cookie
+- Other fixes
+ 
 ## Example
 ```JavaScript
-var myCookies = new myCookies();
-myCookies.setCookie('MyExampleCookie', 'Cookie value for example.'); //saving cookie on 24 hours; return boolean: true
-myCookies.cookieValue('MyExampleCookie'); //get cookie value; return string: 'Cookie value for example.'
-myCookies.cookieName('Cookie value for example.'); //get cookies name by value; return array: ['MyExampleCookie']
-myCookies.cookieExists('MyExampleCookie'); //checking cookie exists; return bolean: true
-myCookies.removeCookie('MyExampleCookie'); //removing cookie; return boolean: true
-myCookies.allCookies(); //return object: {'MyExampleCookie': 'Cookie value for example.'}
-
-myCookies.cookieValue('MyExampleCookie'); //return boolean: false
-myCookies.cookieName('Cookie value for example.'); //return boolean: false
-myCookies.cookieExists('MyExampleCookie'); //return boolean: false
-myCookies.removeCookie('MyExampleCookie'); //return boolean: false
-myCookies.allCookies(); //return boolean: false
-
-myCookies.setCookie('MyExampleCookie', 'Cookie value for example.'); //saving cookie on 24 hours; return boolean: true
-myCookies.destroyCookies(); //remove all cookies; return integer: 1
-myCookies.destroyCookies(); //return boolean: false
+var myCookies = myCookies(true);
+myCookies.setCookie('SimpleCookie', 'xyz');
+var cookies = myCookies.getCookies();
+console.log(cookies);
+/*return
+{
+    "SimpleCookie": {
+        "name": "SimpleCookie",
+        "value": "xyz",
+        "domain": "kysune.me",
+        "expire": 1477936667864,
+        "path": "/"
+    }
+}
+*/
 ```
+ 
 ## Constructor
 ```JavaScript
-myCookies([domain, path]);
+var myCookies = myCookies([extended, domain, path])
 ```
-* **domain** - [optional][string] - your domain name - Default: result of *window.location.hostname*
-* **path** - [optional][string] - your path to save cookie - Default: /
-
+- **extended** - Set the value to TRUE to enable the extended mode (Extended mode allows you to check the path, domain and expiration time of a cookie). [boolean] [Default: false]
+- **domain** - your domain name [string] [Default: value of window.location.hostname]
+- **path** - path of location to store cookies [string] [Default: /]
+ 
 ## Methods
-
-```JavaScript
-setCookie(name, value[, expire, domain, path]);
-```
-* **name** - [string] - cookie name
-* **value** - [string] - cookie value
-* **expire** - [integer] - cookie time expire in milliseconds - Default: result of *date.getTime()* + 24 hours
-* **domain** - [optional][string] - your domain name - Default: result of *window.location.hostname*
-* **path** - [optional][string] - your path to save cookie - Default: /
-* **return**: boolean
-
----
-```JavaScript
-cookieValue(name);
-```
-* **name** - [string] - cookie name
-* **return**: string or false
-
----
-```JavaScript
-cookieName(value);
-```
-* **value** - [string] - cookie value
-* **return**: array of names or false
-
----
-```JavaScript
-cookieExists(name);
-```
-* **name** - [string] - cookie name
-* **return**: boolean (true or false)
-
----
-```JavaScript
-removeCookie(name);
-```
-* **name** - [string] - cookie name
-* **return**: boolean (true or false)
-
----
-```JavaScript
-allCookies();
-```
-* **return**: array of cookies (names and values) or false
-
----
-```JavaScript
-destroyCookies();
-```
-* **return**: integer (number of removed cookies) or false
-
+### setCookie(name, value[, expire, domain, path])
+- **name** - cookie name [string]
+- **value** - cookie value [string]
+- **expire** - expiration time [integer (milliseconds) or Date() object] [Default: current time+24h]
+- **domain** - your domain name [string] [Default: domain from constructor]
+- **path** - path of location to store cookies [string] [Default: path from constructor]
+Create and save a new cookie.
+ 
+### cookieValue(name)
+- **name** - cookie name [string]
+Returns the cookie value, searching by name.
+ 
+### cookieName(value)
+- **value** - cookie value [string]
+Returns the cookie name, searching by value.
+ 
+### cookieExists(name)
+- **name** - cookie name [string]
+Returns true if cookie exists.
+ 
+### removeCookie(name)
+- **name** - cookie name [string]
+Removes a cookie.
+ 
+### destroyCookies()
+Removes all cookies.
+ 
+### getCookies()
+Return all cookies (cookie name and value, __in extended mode: name, value, expiration time, domain and path__).
+ 
+## Methods in extended mode
+### getCookie(name)
+- **name** - cookie name [string]
+Returns all information about a cookie (name, value, expiration time, domain and path). When can't be get all information, return only name and value.
+ 
+### setExpire(name, expire)
+- **name** - cookie name [string]
+- **expire** - expiration time  [integer (milliseconds) or Date() object]
+Change cookie's expiration time.
+ 
+### setDomain(name, domain)
+- **name** - cookie name [string]
+- **domain** - your domain name [string]
+Change cookie's domain.
+ 
+### setPath(name, path)
+- **name** - cookie name [string]
+- **path** - path of location to store cookies [string]
+Change cookie's path.
+ 
 ## License
 MIT License
-
+ 
 Copyright (c) 2016
-
+ 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
+ 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
+ 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
