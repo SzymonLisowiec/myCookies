@@ -39,22 +39,27 @@ var myCookies = myCookies([extended, domain, path])
 - **expire** - expiration time [integer (milliseconds) or Date() object] [Default: current time+24h]
 - **domain** - your domain name [string] [Default: domain from constructor]
 - **path** - path of location to store cookies [string] [Default: path from constructor]
+
 Create and save a new cookie.
  
 ### cookieValue(name)
 - **name** - cookie name [string]
+
 Returns the cookie value, searching by name.
  
 ### cookieName(value)
 - **value** - cookie value [string]
+
 Returns the cookie name, searching by value.
  
 ### cookieExists(name)
 - **name** - cookie name [string]
+
 Returns true if cookie exists.
  
 ### removeCookie(name)
 - **name** - cookie name [string]
+
 Removes a cookie.
  
 ### destroyCookies()
@@ -66,21 +71,25 @@ Return all cookies (cookie name and value, __in extended mode: name, value, expi
 ## Methods in extended mode
 ### getCookie(name)
 - **name** - cookie name [string]
+
 Returns all information about a cookie (name, value, expiration time, domain and path). When can't be get all information, return only name and value.
  
 ### setExpire(name, expire)
 - **name** - cookie name [string]
 - **expire** - expiration time  [integer (milliseconds) or Date() object]
+
 Change cookie's expiration time.
  
 ### setDomain(name, domain)
 - **name** - cookie name [string]
 - **domain** - your domain name [string]
+
 Change cookie's domain.
  
 ### setPath(name, path)
 - **name** - cookie name [string]
 - **path** - path of location to store cookies [string]
+
 Change cookie's path.
  
 ## License
